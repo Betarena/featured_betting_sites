@@ -129,6 +129,7 @@
         box-shadow: 0px 3px 8px rgba(212, 84, 12, 0.32);
         border-radius: 0px 8px;
         padding: 4.5px 12px;
+        width: 68px !important;
 
     } .featured-row .button-extra-info-container {
         position: relative;
@@ -165,7 +166,8 @@
 
     .rating-img {
         margin-right: 20px;
-        width: 76px !important;
+        width: 77px !important;
+        height: 14px !important;
         background-color: white !important;
 
     }
@@ -202,12 +204,16 @@
         {#if viewportDesktop}
             <p class='large' style='margin-right: 32px;'>{data.position}.</p>
         {/if}
-        <img 
-            style='background-color: var({imageVar}); border-radius: 4px;'
-            src={data.image} 
-            alt=""
-        />
-        <p class='large' style='margin-left: 12px;'>{data.name}</p> 
+        <a target="_blank" rel="noreferrer" href="">
+            <img 
+                style='background-color: var({imageVar}); border-radius: 4px;'
+                src={data.image} 
+                alt=""
+            />
+        </a>
+        <a target="_blank" rel="noreferrer" href="">
+            <p class='large' style='margin-left: 12px;'>{data.name}</p> 
+        </a>
     </div>
     <!-- 
     ~~~~~~~~~~~~~~~

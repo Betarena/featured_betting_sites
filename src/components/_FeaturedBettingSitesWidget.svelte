@@ -64,13 +64,22 @@
   let staticViewRow: number // holds the `initial` number of featured sites to be displayed
   let limitViewRow: number  // holds the actual, `total` limit of the list of featured sites
   let showMore: boolean = false // signals to other widget values that the lsit has expanded
+  let displayShowMore: boolean = false // signal as to whether to display or not the `showMore` / `showLess` data container;
 
   $: if (viewportDesktop) {
-    staticViewRow = 10
-    limitViewRow = 10
+
+    if (trueLengthOfArray > 10) {
+      displayShowMore = true
+      staticViewRow = 10
+      limitViewRow = 10
+    }
   } else {
-    staticViewRow = 5
-    limitViewRow = 5
+
+    if (trueLengthOfArray > 5) {
+      displayShowMore = true
+      staticViewRow = 5
+      limitViewRow = 5
+    }
   }
 
   /**
@@ -141,6 +150,7 @@
     white-space: nowrap;
     color: var(--primary);
     box-shadow: inset 0px 1px 0px #EBEBEB;
+    cursor: pointer;
   }
 
   @media only screen and (min-width: 767px) {
@@ -191,8 +201,7 @@
 
     #featured-list-container {
       width: 100%;
-      min-width: 560px;
-      /* max-width: 560px; */
+      max-width: 560px;
     }
   }
 </style>
@@ -217,33 +226,39 @@
         <!--
         ~~~~~~~~~~~~~~~
         RANK 2 LOGO -->
-        <div id='featured-rank' style='margin-top: 20px;'>
-          <SilverCup imageURL={value.site_data_array[1].image} />
-          <!-- 
-          Featured Image Details -->
-          <p class='x-large'>{value.site_data_array[1].name}</p>
-          <p class='large' style='color: #8C8C8C;'>Rank 2</p>
-        </div>
+        <a target="_blank" rel="noreferrer" href="">
+          <div id='featured-rank' style='margin-top: 20px;'>
+            <SilverCup imageURL={value.site_data_array[1].image} />
+            <!-- 
+            Featured Image Details -->
+            <p class='x-large'>{value.site_data_array[1].name}</p>
+            <p class='large' style='color: #8C8C8C;'>Rank 2</p>
+          </div>
+        </a>
         <!--
         ~~~~~~~~~~~~~~~
         RANK 1 LOGO -->
-        <div id='featured-rank' style='margin-bottom: 20px;'>
-          <GoldCup imageURL={value.site_data_array[0].image} />
-          <!-- 
-          Featured Image Details -->
-          <p class='x-large'>{value.site_data_array[0].name}</p>
-          <p class='large' style='color: #8C8C8C;'>Rank 1</p>
-        </div>
+        <a target="_blank" rel="noreferrer" href="">
+          <div id='featured-rank' style='margin-bottom: 20px;'>
+            <GoldCup imageURL={value.site_data_array[0].image} />
+            <!-- 
+            Featured Image Details -->
+            <p class='x-large'>{value.site_data_array[0].name}</p>
+            <p class='large' style='color: #8C8C8C;'>Rank 1</p>
+          </div>
+        </a>
         <!--
         ~~~~~~~~~~~~~~~
         RANK 3 -->
-        <div id='featured-rank' style='margin-top: 20px;'>
-          <BronzeCup imageURL={value.site_data_array[2].image} />
-          <!-- 
-          Featured Image Details -->
-          <p class='x-large'>{value.site_data_array[2].name}</p>
-          <p class='large' style='color: #8C8C8C;'>Rank 3</p>
-        </div>
+        <a target="_blank" rel="noreferrer" href="">
+          <div id='featured-rank' style='margin-top: 20px;'>
+            <BronzeCup imageURL={value.site_data_array[2].image} />
+            <!-- 
+            Featured Image Details -->
+            <p class='x-large'>{value.site_data_array[2].name}</p>
+            <p class='large' style='color: #8C8C8C;'>Rank 3</p>
+          </div>
+        </a>
       </div>
     {/if}
     <!--
@@ -260,16 +275,23 @@
     {#each value.site_data_array.slice(0, limitViewRow) as item}
         <FeaturedSiteRow data={item} />
     {/each}
-    <div>
-      <p id='show-more-box' 
-        on:click={() => toggleFullList()}>
-        {#if !showMore}
-          Show full list
-        {:else} 
-          Show less
-        {/if}
+
+    {#if displayShowMore}
+      <div>
+        <p id='show-more-box' 
+          on:click={() => toggleFullList()}>
+          {#if !showMore}
+            {value.show_more_less[0]}
+          {:else} 
+            {value.show_more_less[1]}
+          {/if}
+        </p>
+      </div>
+    {:else}
+      <p id='show-more-box' style="padding: 5px; box-shadow: none;">
       </p>
-    </div>
+    {/if}
+
   </div>
 
 {:catch error}

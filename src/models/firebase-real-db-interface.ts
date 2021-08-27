@@ -25,4 +25,5 @@ export interface FinalFeaturedSiteResponseDB {
     site_data_array: Array< FeaturedSite >      // contains the array of `FeaturedSite` data from the website
     site_data_array_length: number              // lenght of the array with the number of featured sites
     title: string                               // contains the `geo-locational` title name of the widget
+    show_more_less: string[]                    // show more less widget data translations [0] = 'showMore', [1] = 'showLess'
 }
