@@ -59,11 +59,19 @@
     width: `100%`,
     height: `100%`,
     primaryColor: "#f9f9f9",
-  };
+  }
 
-  let staticViewRow: number = 2 // holds the `initial` number of featured sites to be displayed
-  let limitViewRow: number = 2  // holds the actual, `total` limit of the list of featured sites
+  let staticViewRow: number // holds the `initial` number of featured sites to be displayed
+  let limitViewRow: number  // holds the actual, `total` limit of the list of featured sites
   let showMore: boolean = false // signals to other widget values that the lsit has expanded
+
+  $: if (viewportDesktop) {
+    staticViewRow = 10
+    limitViewRow = 10
+  } else {
+    staticViewRow = 5
+    limitViewRow = 5
+  }
 
   /**
    * Description:
@@ -140,14 +148,17 @@
     #featured-rank {
       display: grid;
       gap: 10px;
-      padding: 10px 39px 15px 39px;
+      padding: 23px 43px 16px 43px;
       background: #F2F2F2;
       border-radius: 12px;
       justify-items: center;
     }
 
     #feature-rank-display {
-      display: flex;
+      display: grid;
+      gap: 20px;
+      grid-auto-flow: column;
+      grid-template-columns: repeat(3, 1fr);
       justify-content: space-between;
       padding: 20px 20px 0 20px;
     }
