@@ -14,6 +14,7 @@ export interface FeaturedSite {
     description: string         // featured betting site dsctiption referral condition
     conditions: string          // featured site T&Cs
     cta_link: string            // `call-to-action` link for the featured betting site
+    conditions_head: string     // heading-value of the `conditions`
 }
 
 /**
