@@ -19,7 +19,7 @@ export function get(endpoint:string) {
 		// }
 	}).then(response => {
         // verify if the response is error-free
-        console.log(response)
+        // console.log(response)
         if (!response.ok) {
             console.log('response-data', response)
             throw new Error('Network response was not ok');

@@ -23,12 +23,12 @@ export function writeData() {
     // example data writing;
 
     let countryArr = [
-        'be', 
-        'co', 
+        // 'be', 
+        // 'co', 
         // 'en', //
         'gb',
-        'es', 
-        'pt',
+        // 'es', 
+        // 'pt',
     ]
     let betSitesArr = [
         'bet365',
@@ -59,6 +59,7 @@ export function writeData() {
             console.info('Data for' + `${lang}` + 'Written!')
         })
         db_real.ref('featured_betting_sites/' + lang).update({'title': 'Top Bookmekers from the US'})
+        db_real.ref('featured_betting_sites/' + lang).update({'show_more_less': ['Show full list', 'Show less']})
     });
 }
 
@@ -79,21 +80,34 @@ export function writeData() {
     return db_real.ref().child('featured_betting_sites').child(userCountryCode.toLowerCase()).get().then((snapshot) => {
         // check if the data exists (should exist at all times);
         if (snapshot.exists()) {
-            // console.info('data from Real DB', snapshot.val())
+            // console.info('data from Real DB', [snapshot.val()])
             
             // converting returned response (object) to an (array);
-            let featuredSitesArr: Array < FeaturedSite > = Object.values(snapshot.val()) as unknown as Array< FeaturedSite >;
+            // let featuredSitesArr: Array < FeaturedSite > = Object.values(snapshot.val()) as unknown as Array< FeaturedSite >;
+            let featuredSitesArr: Array < FeaturedSite > = Object.entries(snapshot.val()) as unknown as Array< FeaturedSite >;
 
-            // intercept the `title` object from the array;
-            let title: string = featuredSitesArr.at(-1)
-            // remove the `title` object form the array;
-            featuredSitesArr = featuredSitesArr.slice(0,-1)
+            // convert object values to MAP;
+            var map = new Map(featuredSitesArr)
+
+            // intercept the `title` object from the Map ARRAY;
+            // & remove it from the MAP;
+            let title: string = map.get('title')
+            map.delete('title')
+
+            // interpect the `show_more_less` from the Map Array;
+            // & remove it from the MAP;
+            let show_more_less: string[] = map.get('show_more_less')
+            map.delete('show_more_less')
+
+            featuredSitesArr = [...map.values()]
+            // console.log('featuredSitesArr', featuredSitesArr)
 
             // prettify the object correctly, and prepare for returning it;
             let finalResponseDB: FinalFeaturedSiteResponseDB = {
                 site_data_array: featuredSitesArr,         
                 site_data_array_length: featuredSitesArr.length,
-                title: title
+                title: title,
+                show_more_less: show_more_less
             }
             
             // return the response as an Array;
