@@ -204,14 +204,14 @@
         {#if viewportDesktop}
             <p class='large' style='margin-right: 32px;'>{data.position}.</p>
         {/if}
-        <a target="_blank" rel="noreferrer" href="">
+        <a target="_blank" rel="noreferrer" href={data.cta_link}>
             <img 
                 style='background-color: var({imageVar}); border-radius: 4px;'
                 src={data.image} 
                 alt=""
             />
         </a>
-        <a target="_blank" rel="noreferrer" href="">
+        <a target="_blank" rel="noreferrer" href={data.cta_link}>
             <p class='large' style='margin-left: 12px;'>{data.name}</p> 
         </a>
     </div>
@@ -295,14 +295,14 @@
                     />
                     <div class='extra-info-container'>
                         <p class='large'>
-                            200% Bonus up to $200
+                            {data.conditions_head}
                         </p>
                         <p class='medium'>
-                            No code required
+                            {data.conditions}
                         </p>
                         <a rel='external' 
                             href={data.cta_link}>
-                            <button class='btn-primary btn-cta'>
+                            <button class='btn-primary btn-cta' style="width: 100% !important;">
                                 <p>Register</p> 
                             </button>
                         </a>

@@ -226,7 +226,7 @@
         <!--
         ~~~~~~~~~~~~~~~
         RANK 2 LOGO -->
-        <a target="_blank" rel="noreferrer" href="">
+        <a target="_blank" rel="noreferrer" href={value.site_data_array[1].cta_link}>
           <div id='featured-rank' style='margin-top: 20px;'>
             <SilverCup imageURL={value.site_data_array[1].image} />
             <!-- 
@@ -238,7 +238,7 @@
         <!--
         ~~~~~~~~~~~~~~~
         RANK 1 LOGO -->
-        <a target="_blank" rel="noreferrer" href="">
+        <a target="_blank" rel="noreferrer" href={value.site_data_array[0].cta_link}>
           <div id='featured-rank' style='margin-bottom: 20px;'>
             <GoldCup imageURL={value.site_data_array[0].image} />
             <!-- 
@@ -250,7 +250,7 @@
         <!--
         ~~~~~~~~~~~~~~~
         RANK 3 -->
-        <a target="_blank" rel="noreferrer" href="">
+        <a target="_blank" rel="noreferrer" href={value.site_data_array[2].cta_link}>
           <div id='featured-rank' style='margin-top: 20px;'>
             <BronzeCup imageURL={value.site_data_array[2].image} />
             <!-- 
