@@ -26,9 +26,9 @@ export function writeData() {
         // 'be', 
         // 'co', 
         // 'en', //
-        'gb',
+        // 'gb',
         // 'es', 
-        // 'pt',
+        // 'pt',/
     ]
     let betSitesArr = [
         'bet365',
@@ -51,11 +51,12 @@ export function writeData() {
                 description: `Open an account with bet365 today and bet on a huge 
                                 range of markets with the world’s favourite online sports betting company.`,
                 conditions: 'No code required',
+                conditions_head: '200% Bonus up to $200',
                 cta_link: 'https://qg9t2.app.goo.gl/bet365_general',
             }
             counter++
             // write the data to the `real-db`;
-            db_real.ref('featured_betting_sites/' + lang + '/' + featuredData).set(data)
+            db_real.ref('featured_betting_sites/' + lang + '/' + featuredData).update(data)
             console.info('Data for' + `${lang}` + 'Written!')
         })
         db_real.ref('featured_betting_sites/' + lang).update({'title': 'Top Bookmekers from the US'})
@@ -100,7 +101,11 @@ export function writeData() {
             map.delete('show_more_less')
 
             featuredSitesArr = [...map.values()]
-            // console.log('featuredSitesArr', featuredSitesArr)
+            console.log('featuredSitesArr', featuredSitesArr)
+
+            // filter values by position in order of ascending
+            featuredSitesArr.sort((a, b) => parseInt(a.position) - parseInt(b.position));
+            console.log('featuredSitesArr', featuredSitesArr)
 
             // prettify the object correctly, and prepare for returning it;
             let finalResponseDB: FinalFeaturedSiteResponseDB = {
