@@ -108,6 +108,17 @@
 -->
 
 <style>
+
+    #background-modal-blur {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 4;
+        height: 100%;
+        width: 100%;
+    }
+
     .featured-row {
         padding: 13px 20px;
         background: #FFFFFF;
@@ -188,6 +199,12 @@
 <!-- 
     COMPONENT HTML 
 -->
+
+{#if showExtraInfo}
+    <div id='background-modal-blur' 
+        in:fade
+        on:click={() => showExtraInfo = false} />
+{/if}
 
 <div class='featured-row' 
     in:fade>
