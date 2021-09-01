@@ -101,11 +101,11 @@ export function writeData() {
             map.delete('show_more_less')
 
             featuredSitesArr = [...map.values()]
-            console.log('featuredSitesArr', featuredSitesArr)
+            // console.log('featuredSitesArr', featuredSitesArr)
 
             // filter values by position in order of ascending
             featuredSitesArr.sort((a, b) => parseInt(a.position) - parseInt(b.position));
-            console.log('featuredSitesArr', featuredSitesArr)
+            // console.log('featuredSitesArr', featuredSitesArr)
 
             // prettify the object correctly, and prepare for returning it;
             let finalResponseDB: FinalFeaturedSiteResponseDB = {
