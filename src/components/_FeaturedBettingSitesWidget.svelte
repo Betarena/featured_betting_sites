@@ -142,6 +142,7 @@
     padding: 24px 60px 20px 60px;
     text-align: center;
     white-space: nowrap;
+    font-weight: 500;
   }
 
   #show-more-box {
