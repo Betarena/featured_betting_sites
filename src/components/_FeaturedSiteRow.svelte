@@ -256,31 +256,31 @@
             {#if data.rating === 5}
                 <img
                     class='rating-img'
-                    src="./static/Property 1=5.svg" 
+                    src="https://www.betarena.com/widgets/betarena-ad-widget-main-main/static/Property 1=5.svg" 
                     alt=""
                 />
             {:else if data.rating === 4}
                 <img
                     class='rating-img'
-                    src="./static/Property 1=4.svg" 
+                    src="https://www.betarena.com/widgets/betarena-ad-widget-main-main/static/Property 1=4.svg" 
                     alt=""
                 />
             {:else if data.rating === 3}
                 <img
                     class='rating-img'
-                    src="./static/Property 1=3.svg" 
+                    src="https://www.betarena.com/widgets/betarena-ad-widget-main-main/static/Property 1=3.svg" 
                     alt=""
                 />
             {:else if data.rating === 2}
                 <img
                     class='rating-img'
-                    src="./static/Property 1=2.svg" 
+                    src="https://www.betarena.com/widgets/betarena-ad-widget-main-main/static/Property 1=2.svg" 
                     alt=""
                 />
             {:else}
                 <img
                     class='rating-img'
-                    src="./static/Property 1=1.svg" 
+                    src="https://www.betarena.com/widgets/betarena-ad-widget-main-main/static/Property 1=1.svg" 
                     alt=""
                 />
             {/if}
