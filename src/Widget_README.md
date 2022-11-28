@@ -17,10 +17,11 @@ used by the `GeoJS` API - `https://dev.maxmind.com/geoip/legacy/codes`.
 
 ![image](https://user-images.githubusercontent.com/20924663/131053689-87461c9c-a85f-48a3-b0e6-47ec776213c8.png)
 
-The Widget is fully responsive and higlhy dynamic to adjsut to any screen size and correctly display the data as outlined in the desgin-test. In line with the `Asana` Task board card, 
+The Widget is fully responsive and higlhy dynamic to adjsut to any screen size and correctly display the data as outlined in the desgin-test. In line with the `Asana` Task board card,
 this widget displays data for a user on a target match-betting site in accordance to the `GeoPosition`, from which the correct `data` of the featured-betting sites is rendered accordingly into the widget.
 
 The widget has been split into to components, for easier managment of the code and cumbersome `svg` manipulation:
+
 - `src\components\_BronzeCup.svelte` , `src\components\_GoldCup.svelte` & `src\components\_SilverCup.svelte` -> contain `.svelte` svg components for the better svg manipulation and **clutter-free** main html file,
 - `src\components\_FeaturedBettingSitesWidget.svelte` -> contains the main widget code, both for `mobile` & `tablet/desktop` versions.
 - `src\components\_FeaturedSiteRow.svelte` -> contains the main `row` for the widget of the featured-widget sites list.

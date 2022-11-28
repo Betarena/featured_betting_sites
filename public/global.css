@@ -1,16 +1,16 @@
 html,
 body {
-    background-color: var(--light);
-    margin: 0 0;
-    padding: 0 0;
-    /* width: 100vw; forms a scroll-bar, unecessary, */
-    height: 100vh;
-    height: var(--app-height);
-    overflow-x: hidden;
+  background-color: var(--light);
+  margin: 0 0;
+  padding: 0 0;
+  /* width: 100vw; forms a scroll-bar, unecessary, */
+  height: 100vh;
+  height: var(--app-height);
+  overflow-x: hidden;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* 
@@ -22,24 +22,23 @@ DECALRING GLOBAL VARIABLES
 /* to learn more -> 
 https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties */
 :root {
-    --app-height: 100%;
-    /* 
+  --app-height: 100%;
+  /* 
     Main App Colors, */
-    --primary: #F5620F;
-    --secondary: #1B1B1B;
-    --light: #FFFFFF;
-    --tertiary: #00FFD1;
-    /* 
+  --primary: #f5620f;
+  --secondary: #1b1b1b;
+  --light: #ffffff;
+  --tertiary: #00ffd1;
+  /* 
     Dark Theme, */
-    --dark: #292929;
-    --background-surface: #121212;
-    /* 
+  --dark: #292929;
+  --background-surface: #121212;
+  /* 
     breakpoints */
-    --mobile: 375;
-    --tablet: 767;
-    --destop: 1440;
+  --mobile: 375;
+  --tablet: 767;
+  --destop: 1440;
 }
-
 
 /* 
 ==========================
@@ -47,8 +46,7 @@ Set Global Fonts for Website,
 ==========================
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 /* 
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -68,45 +66,39 @@ h3,
 h4,
 h5,
 h6 {
-    font-style: normal;
-    font-weight: normal;
-    font-family: 'Roboto', sans-serif;
-	line-height: 150%;
-    transition: all 0.5s ease;
-    color: var(--dark);
-    margin: 0;
-
+  font-style: normal;
+  font-weight: normal;
+  font-family: "Roboto", sans-serif;
+  line-height: 150%;
+  transition: all 0.5s ease;
+  color: var(--dark);
+  margin: 0;
 }
 
 p {
-    font-family: 'Roboto', sans-serif;
-	font-style: normal;
-	font-weight: normal;
-	/* font-size: 14px; */
-	line-height: 150%;
-    margin: 0;
-    color: var(--dark);
-
-} 
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  /* font-size: 14px; */
+  line-height: 150%;
+  margin: 0;
+  color: var(--dark);
+}
 p.x-large,
 span.x-large {
-    font-size: 18px;
-
-} 
+  font-size: 18px;
+}
 p.large,
 span.large {
-    font-size: 16px;
-
-} 
+  font-size: 16px;
+}
 p.medium,
 span.medium {
-    font-size: 14px;
+  font-size: 14px;
+}
 
-} 
-
-p.small { 
-    font-size: 12px;
-
+p.small {
+  font-size: 12px;
 }
 
 /* 
@@ -115,32 +107,33 @@ BUTTON STYLES
 ==========================
 */
 button {
-    outline: none;
-    border: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    cursor: pointer;
-	/* Auto Layout */
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	padding: 11px 24px 12px;
-	/* width: 303px; */
-	/* height: 44px; */
-	box-shadow: 0px 3px 8px rgba(212, 84, 12, 0.32);
-	border-radius: 8px;
-} 
+  outline: none;
+  border: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  /* Auto Layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 11px 24px 12px;
+  /* width: 303px; */
+  /* height: 44px; */
+  box-shadow: 0px 3px 8px rgba(212, 84, 12, 0.32);
+  border-radius: 8px;
+}
 /* 
 ~~~~~~~~~~~~~~~~~~~~
 PRIMARY BTN */
 .btn-primary {
-	background-color: var(--primary) !important;
-} .btn-primary p {
-    color: var(--light) !important;
+  background-color: var(--primary) !important;
+}
+.btn-primary p {
+  color: var(--light) !important;
 }
 .btn-primary:hover {
-    background-color: rgba(247, 124, 66, 1) !important;
+  background-color: rgba(247, 124, 66, 1) !important;
 }
 
 /* 
@@ -150,18 +143,18 @@ INPUT STYLES
 */
 
 input {
-    width: 100%;
-    border-radius: 5px;
-    border: 0;
-    font-size: 20px;
-    outline: none;
-    padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  border: 0;
+  font-size: 20px;
+  outline: none;
+  padding: 10px;
 }
 
 a {
-    text-decoration: none;
-    cursor: pointer;
-    color: white;
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
 }
 
 /* 
@@ -171,40 +164,40 @@ CONTAINER DIVs
 */
 
 .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    align-content: center;
-    margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  margin: 0;
 }
 
 .row {
-	display: flex;
-	flex-wrap: nowrap;
-	align-content: center;
-	justify-content: space-between;
-	align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
 }
 /*
 =============================
 TABLET (& UP), 
 100vw - calaulated from 768px */
 @media only screen and (min-width: 767px) {
-	.row {
-		justify-content: unset;
-	}
+  .row {
+    justify-content: unset;
+  }
 }
 
 .row-center {
-    display: flex;
-	flex-wrap: nowrap;
-	align-content: center;
-    justify-content: space-evenly;
-	align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .column {
-	display: grid;
-    align-content: center;
-    align-items: center;
+  display: grid;
+  align-content: center;
+  align-items: center;
 }
